@@ -89,7 +89,7 @@ class WithJoinEloquentBuilder extends Builder
 		]);
 		$joinLeftCondition = implode('.', [
 			$joinTableAlias,
-			$relation->getOtherKey()
+			$relation->getOwnerKey()
 		]);
 		$joinRightCondition = implode('.', [
 			$currentTableAlias,
@@ -226,7 +226,7 @@ class WithJoinEloquentBuilder extends Builder
 	{
 		//if passing the relations as arguments, pass on to eloquents with
 		if (is_string($relations)) $relations = func_get_args();
-		
+
 		$includes = null;
 		try
 		{
