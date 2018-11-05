@@ -62,7 +62,7 @@ class WithJoinEloquentBuilder extends Builder
 	 */
 	protected function addNestedRelations($name, Relation $relation)
 	{
-		$nestedRelations = $this->nestedRelations($name);
+		$nestedRelations = $this->relationsNestedUnder($name);
 		if (count($nestedRelations) <= 0) return;
 
 		$class = $relation->getRelated();
